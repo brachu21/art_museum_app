@@ -2,6 +2,7 @@ import React from 'react';
 import {LoginContent, Input, Hint, Title, Address, BluredBackground} from './StyledLogin';
 import Button from '../../components/button/button';
 import BackgroundImage from '../../img/backgroundImage.png';
+import {Link} from 'react-router-dom';
 
 const LoginPage = () => (
     <>
@@ -24,7 +25,7 @@ const LoginPage = () => (
                     <Hint alignRight={true}>Forgot your password?</Hint>
                 </div>
                 <div>
-                    <Button>Log In</Button>
+                    <Link to={'/'}><Button>Log In</Button></Link>
                     <Hint alignRight={false} style={{textAlign: 'start'}}>Don't have an account?</Hint>
                 </div>
             </div>

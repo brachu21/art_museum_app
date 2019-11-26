@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const Header = ({PageTitle}) => (
     <Nav>
         <NavWrapper>
-            <Link style={{textDecoration: 'none', color: 'black'}} to={'/main'}><Logo>the<br/>art<br/>museum</Logo></Link>
+            <Link style={{textDecoration: 'none', color: 'black'}} to={'/'}><Logo>the<br/>art<br/>museum</Logo></Link>
             <SectionTitle>{PageTitle}</SectionTitle>
             <Menu/>
         </NavWrapper>

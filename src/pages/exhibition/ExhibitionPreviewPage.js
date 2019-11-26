@@ -10,7 +10,7 @@ const ExhibitionPreviewPage = () => (
     <>
         <Description title="DOROTHEA LANGE" subTitle="RETROSPECTIVE" date="OCTOBER 15 - MARCH 18" where="floor 3"/>
         <Slider/>
-        <Collapsible style={{marginTop: '48px'}} text={text} title="biography"/>
+        <Collapsible text={text} title="biography"/>
     </>
 );
 

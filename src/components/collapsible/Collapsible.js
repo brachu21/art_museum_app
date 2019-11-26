@@ -1,6 +1,5 @@
 import React, {useState, useContext} from 'react';
 import {CollapsibleComponent, CollapsibleButton, Biography} from './StyledCollapsible';
-// import Icon from '../../img/collapsible/down1.png';
 import Icon from '../../img/collapsible/down.svg';
 
 const Collapsible = ({title, text}) => {
@@ -12,7 +11,7 @@ const Collapsible = ({title, text}) => {
     };
 
     return (
-        <div ref={node} style={{marginTop: '20%'}}>
+        <div ref={node} style={{marginTop: '8%'}}>
             <CollapsibleComponent>
                 <p>{title}</p>
                 <CollapsibleButton open={open} onClick={() => handleClick()} icon={Icon}/>

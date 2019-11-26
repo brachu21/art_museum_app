@@ -14,11 +14,11 @@ const RouteWrapper = ({menuOpen}) => (
     <Route path="/" component={App}>
         <Header/>
         <AppWrapper menuOpen={menuOpen}>
-            <Route path="/" component={MainPage}/>
+            <Route path="/" exact component={MainPage}/>
             <Route path="/collections" component={CollectionsPage}/>
             <Route path="/exhibition" component={ExhibitionPreviewPage}/>
             <Route path="/planyourvisit" component={PlanVisitPage}/>
-            <Route path="/404" component={NotFoundPage}/>
+            <Route path={"/404"} component={NotFoundPage}/>
         </AppWrapper>
     </Route>
 );

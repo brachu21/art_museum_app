@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Icon from '../../img/collapsible/down.svg';
 
 const CollapsibleComponent = styled.div`
   display: flex;

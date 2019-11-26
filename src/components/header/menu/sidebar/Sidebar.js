@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {StyledSidebar, MenuPosition} from './StyledSidebar';
+import {StyledSidebar} from './StyledSidebar';
 import Position from "./Position";
 import Collections from '../../../../img/Collections.svg';
 import Ellipse13 from '../../../../img/Ellipse 13.svg';
@@ -12,7 +12,7 @@ import Searchbar from "./Searchbar";
 import {connect} from "react-redux";
 
 
-const Sidebar = ({open}) => {
+const Sidebar = ({closeMenu, open}) => {
 
     const positions = [
         {
@@ -53,7 +53,9 @@ const Sidebar = ({open}) => {
                 <li><Searchbar/></li>
                 {positions.map(p => (
                     <li>
-                        <Link style={{textDecoration: 'none'}} to={p.link}>
+                        <Link
+                            style={{textDecoration: 'none'}}
+                            to={p.link} onClick={() => closeMenu()}>
                             <Position title={p.title} icon={p.icon}/>
                         </Link>
                     </li>
@@ -67,5 +69,14 @@ function mapState(state) {
     return {open: state.menuOpen}
 }
 
-export default connect(mapState)(Sidebar);
+
+function mapDispatch (dispatch) {
+    return {
+        closeMenu() {
+            dispatch({ type: 'CLOSE_MENU'})
+        }
+    }
+}
+
+export default connect(mapState, mapDispatch)(Sidebar);
 

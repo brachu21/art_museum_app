@@ -5,14 +5,8 @@ import theme from "../utils/theme";
 import LoginPage from "../pages/login/LoginPage";
 import {createGlobalStyle, ThemeProvider} from "styled-components";
 import RouteWrapper from "./RouteWrapper";
-import App from "../App";
 import Header from "./header/Header";
-import AppWrapper from "../styles/AppWrapper";
-import MainPage from "../pages/main/MainPage";
-import CollectionsPage from "../pages/collections/CollectionsPage";
-import ExhibitionPreviewPage from "../pages/exhibition/ExhibitionPreviewPage";
-import PlanVisitPage from "../pages/planyourvisit/PlanVisitPage";
-import NotFoundPage from "./404";
+
 
 const GlobalStyle = createGlobalStyle`
       body {
@@ -42,16 +36,6 @@ const Routing = ({menuOpen}) => (
                 <Switch>
                     <Route path="/login" component={LoginPage}/>
                     <RouteWrapper/>
-                    {/*<Route path="/" component={App}>*/}
-                    {/*    <Header/>*/}
-                    {/*    <AppWrapper menuOpen={menuOpen}>*/}
-                    {/*        <Route path="/main" component={MainPage}/>*/}
-                    {/*        <Route path="/collections" component={CollectionsPage}/>*/}
-                    {/*        <Route path="/exhibition" component={ExhibitionPreviewPage}/>*/}
-                    {/*        <Route path="/planyourvisit" component={PlanVisitPage}/>*/}
-                    {/*        <Route path="/404" component={NotFoundPage}/>*/}
-                    {/*    </AppWrapper>*/}
-                    {/*</Route>*/}
                 </Switch>
             </Router>
         </ThemeProvider>

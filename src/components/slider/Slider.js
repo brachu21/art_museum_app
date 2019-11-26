@@ -1,7 +1,7 @@
 import React from 'react';
 import SlideImg from '../../img/slider/slide.png';
-import Dots from './Dots';
 import './slider.scss';
+import Hero from '../../components/hero/Hero'
 
 const photos = [
     {
@@ -18,6 +18,12 @@ const photos = [
     },
 ]
 
+const descStyle = {
+    fontSize: '10px',
+    color: '#979797',
+    textAlign: 'center'
+}
+
 class Slider extends React.Component {
 
     state = {};
@@ -25,46 +31,14 @@ class Slider extends React.Component {
 
     render() {
         return (
-            <section id="slider">
-
-                <input type="radio" name="slider" id="s1"/>
-                <input type="radio" name="slider" id="s2"/>
-                <input type="radio" name="slider" id="s3" />
-                <input type="radio" name="slider" id="s4" checked/>
-                <input type="radio" name="slider" id="s5"/>
-
-                <label htmlFor="s1" id="slide1"></label>
-                <label htmlFor="s2" id="slide2"></label>
-                <label htmlFor="s3" id="slide3"></label>
-                <label htmlFor="s4" id="slide4"></label>
-                <label htmlFor="s5" id="slide5"></label>
-            </section>
+            <>
+            <Hero src={SlideImg}/>
+                <p style={descStyle}>“Abandoned Dust Bowl Home”<br/>
+                    Gelatin silver print<br/>
+                    about 1935 - 1940</p>
+            </>
         )
-        // return (
-        //
-        // <div className="slider">
-        // {photos.map((p, i) => (
-        //                 <Slide key={i} img={p.img} text={p.text}/>
-        //             ))}
-        //         </div>
-        //         <Dots photos={photos}/>
-        //     </>
-        // );
     }
 }
-
-const Slide = ({img, text}) => (
-    <>
-        <input/>
-        //TODO text
-    </>
-)
-//
-// const Slide = ({img, text}) => (
-//     <div className="slide">
-//         <img src={img}/>
-//         <p>{text}</p>
-//     </div>
-// );
 
 export default Slider;

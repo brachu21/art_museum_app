@@ -6,6 +6,7 @@ import Description from '../../components/description/Description';
 import HeroImage from '../../img/backgroundImage.png';
 import Location from '../../img/location.svg'
 import Clock from '../../img/clock.svg'
+import {Link} from 'react-router-dom';
 
 const infoRow = {
     position: 'absolute',
@@ -36,7 +37,8 @@ const buttonCenter = {
     marginTop: '5%',
     marginLeft: 'auto',
     marginRight: 'auto',
-}
+};
+
 const MainPage = () => (
     <div style={componentStyle}>
         <Hero src={HeroImage}/>
@@ -45,7 +47,7 @@ const MainPage = () => (
                      subTitle="exhibition"
                      where="Floor 5"
                      date="april 15 - september 20"/>
-        <Button style={buttonCenter}>Plan your visit</Button>
+        <Link  style={buttonCenter} to={'/planyourvisit'}><Button>Plan your visit</Button></Link>
         <div style={infoRow}>
             <Info text="151 3rd St San Francisco, CA 94103"
                   icon={Location}/>
