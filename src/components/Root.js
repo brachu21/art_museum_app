@@ -5,7 +5,6 @@ import theme from "../utils/theme";
 import LoginPage from "../pages/login/LoginPage";
 import {createGlobalStyle, ThemeProvider} from "styled-components";
 import RouteWrapper from "./RouteWrapper";
-import Header from "./header/Header";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -19,14 +18,7 @@ const GlobalStyle = createGlobalStyle`
       }
     `;
 
-const NavRoute = ({exact, path, component: Component}) => (
-    <Route exact={exact} path={path} render={(props) => (
-        <div>
-            <Header/>
-            <Component {...props}/>
-        </div>
-    )}/>
-)
+
 
 const Routing = ({menuOpen}) => (
     <>

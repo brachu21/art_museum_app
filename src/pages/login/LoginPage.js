@@ -3,8 +3,9 @@ import {LoginContent, Input, Hint, Title, Address, BluredBackground} from './Sty
 import Button from '../../components/button/button';
 import BackgroundImage from '../../img/backgroundImage.png';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux'
 
-const LoginPage = () => (
+const LoginPage = ({logIn}) => (
     <>
         <BluredBackground image={BackgroundImage}/>
         <LoginContent>
@@ -25,11 +26,28 @@ const LoginPage = () => (
                     <Hint alignRight={true}>Forgot your password?</Hint>
                 </div>
                 <div>
-                    <Link to={'/'}><Button>Log In</Button></Link>
+                    <Link onClick={() => logIn} to={'/'}><Button>Log In</Button></Link>
                     <Hint alignRight={false} style={{textAlign: 'start'}}>Don't have an account?</Hint>
                 </div>
             </div>
         </LoginContent>
     </>
 );
-export default LoginPage;
+
+
+function mapState(state) {
+    return {
+        menuOpen: state.menuOpen,
+        isLogged: state.isLogged
+    }
+}
+
+function mapDispatch (dispatch) {
+    return {
+        logIn () {
+            dispatch({ type: 'LOG_IN' })
+        }
+    }
+}
+
+export default connect(mapState, mapDispatch)(LoginPage);

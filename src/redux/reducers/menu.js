@@ -2,7 +2,8 @@ import * as types from '../actions/actionTypes';
 import {OPEN_MENU} from "../actions/actionTypes";
 
 const initialState = {
-    menuOpen: false
+    menuOpen: false,
+    isLogged: false
 };
 
 function menu(state = initialState, action) {
@@ -14,6 +15,14 @@ function menu(state = initialState, action) {
         case types.CLOSE_MENU:
             return Object.assign({}, state, {
                 menuOpen: false
+            });
+        case "LOG_IN":
+            return Object.assign({}, state, {
+                isLogged: true
+            });
+        case "LOG_OUT":
+            return Object.assign({}, state, {
+                isLogged: false
             });
         default:
             return state;
